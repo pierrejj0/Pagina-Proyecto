@@ -1,0 +1,8 @@
+{
+<<<<<<< HEAD
+    "liveServer.settings.port": 5503
+=======
+    "liveServer.settings.port": 5502,
+    "livePreview.defaultPreviewPath": "/index.html"
+>>>>>>> 3041274 (agg imagen del CRAI)
+}

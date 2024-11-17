@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N Veces</title>
+<body>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #a2e1db, #d7e1fc); /* Gradiente en tonos verde y azul */
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #a2e1db;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+}
+
+button {
+    background-color: #6a10d9; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Verde oscuro */
+}
+
+#res {
+    white-space: pre-wrap; /* Para mantener los saltos de línea en el mensaje */
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #d7e1fc; /* Azul suave */
+    color: #333;
+    font-size: 16px;
+}
+</style>
+<main>
+    <h1>Presentar un mensaje</h1>
+<form action="/pages/ejercicios.html">
+<div class="container">
+    <input type="number" id="num" placeholder="Ingresa un número">
+    <button onclick="n1()"type="button">Mostrar Mensaje</button>
+    <button type="submit">Regresar</button>
+    <div id="res"></div>
+</div>
+</form>
+<script src="/js/ejercicios.js"></script>
+</body>

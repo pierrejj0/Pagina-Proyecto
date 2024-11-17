@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Mi página</title>
+</head>
+<body>
+    <main>
+      
+        <section>
+      
+            <header>
+                <div class="logotipo">
+                    <center><img src="../images/logotipo_1.png"
+                    alt=""
+                    width="100px"></center>
+                </div>
+                <nav>
+                    <ul class="opciones">
+                   <li><a href="./ejercicios.html">Ejercicios</a></li> 
+                    <li><a href="./contacto.html">Contacto</a></li>
+                    <li><a href="./acercade.html">Acerca de</a></li>
+                    <li><a href="./venta.html">Venta</a></li>
+                </ul>
+                </nav>
+            </header>
+              
+          <article class="formContainer1">
+            <h2 class="titulo">Identificate</h2>
+            <form action="../index.html">
+              <div>
+                <label for="nombre">Nombre y Apellido</label>
+                <input id="nombre" type="text">
+              </div>
+              <div>
+                <label for="edad">Edad</label>
+                <input id="edad" type="number" min="1" max="99" required maxlength="2">
+              </div>
+              <div>
+                <label for="">Sexo</label>
+                <select id="sexo">
+                  <option value="m">Masculino</option>
+                  <option value="f">Femenino</option>
+                </select>
+              </div>
+              <div>
+                <label for="nombre">¿Qué carrera estudias?</label>
+                <input id="carrera" type="text">
+              </div>
+              <div>
+              <label>
+                <input type="checkbox" id="gusta" value="yes">Me gusta esta página
+              </label>
+              </div>
+              <div>
+                <label for="obs">Comentario</label>
+                <textarea   id="obs" rows="3">
+                </textarea>
+              </div>
+              <div>
+                <button type="button" onclick="opinion()">Aceptar</button>
+                <button type="submit">Ir a inicio</button>
+                <button type="reset">Limpiar</button>
+              </div>
+            </form>
+          </article>
+        </section>
+      </main>
+      <script src="../js/main.js"></script>
+</body>
+</html>

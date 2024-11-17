@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positivos</title></head>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Contenedor del formulario */
+        form {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Estilo para los elementos div en el formulario */
+        div {
+            margin-bottom: 15px;
+        }
+
+        /* Estilo de las etiquetas */
+        label {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Estilo de los inputs y textarea */
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            resize: none;
+        }
+
+        /* Cambio de color cuando los inputs están enfocados */
+        input[type="text"]:focus, textarea:focus {
+            border-color: #4a90e2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+        }
+
+        /* Estilo del textarea */
+        textarea {
+            height: 100px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Botones del formulario */
+        button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        /* Estilo de hover para los botones */
+        button:hover {
+            background-color: #357abd;
+        }
+
+        /* Estilo especial para el botón de regresar */
+        button[type="submit"] {
+            background-color: #d3d3d3;
+            color: #333;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #b8b8b8;
+        }
+    </style>
+    <body>
+        <form action="/pages/ejercicios.html">
+    <div>
+        <label for="">Ingrese la cantidad:</label>
+        <br>
+        <input type="text" id="num4">
+    </div>
+    <br>
+    <div>
+        <label for="">Respuesta</label>
+        <br>
+        <br>
+        <textarea name="" id="res3">Answer</textarea>
+    </div>
+    <button onclick="n4()" type="button">Iniciar</button>
+    <button type="submit">Regresar</button>
+</form>
+<script src="/js/ejercicios.js"></script>
+    </body>
+
+
+</html>

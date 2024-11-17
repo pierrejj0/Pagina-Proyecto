@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiples de 7</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border-color: #4A90E2;
+        }
+
+        button {
+            background-color: #4A90E2;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #86a5c3;
+        }
+
+        textarea {
+            height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="num1">Introduce un número:</label>
+            <br>
+            <input type="text" id="num1">
+        </div>
+        <div>
+            <label for="res1">Respuesta:</label>
+            <br><br>
+            <textarea id="res1" readonly>Answer</textarea>
+        </div>
+        <br>
+        <button onclick="n2()" type="button">Iniciar</button>
+        <button type="submit">Regresar</button>
+    </form>
+    <script src="/js/ejercicios.js"></script>
+    </body>
+    </html>

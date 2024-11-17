@@ -1,0 +1,68 @@
+body {
+    background-color: rgba(71, 185, 65, 0.564);
+    color: #020202;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+.contenedor {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+h1 {
+    color: rgb(9, 8, 8);
+    font-size: 50px;
+}
+
+.grupo{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.grupo label, button{
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold; 
+}
+
+.grupo button {
+    text-align: center;
+    gap: 30px;
+    border-radius: 10px;
+    margin: 1px;
+    color: #000000;
+    height: 55px;
+    width: 120px;
+    align-items: center;
+    background-image: linear-gradient(to right top, #80cbc4, #b2dfdb, #e0f7fa, #e0f2f1);
+    cursor: pointer;
+    transition: .5s ease-in-out
+}
+.grupo input{
+    display: block;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#iva{
+    display: block;
+    margin-left: -180px;
+    width: 40px;
+}
+
+textarea{
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 30px;
+    color: #1d1d1d;
+    font-weight: bold;
+}
