@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrados de los Números</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+            max-width: 90%;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+        }
+
+        .success {
+            color: green;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/pages/arreglos/arreglos.html">
+    <div class="container">
+        <h1>Cuadrados de los Números</h1>
+        <input type="text" id="inputNumbers" placeholder="Introduce los números separados por coma" />
+        <button onclick="calcularCuadrados()">Calcular Cuadrados</button>
+        <button type="submit">Regresar</button>
+        <div class="result" id="resultado"></div></form>
+    </div>
+
+    <script>
+        function calcularCuadrados() {
+            let input = document.getElementById("inputNumbers").value;
+            let numeros = input.split(',').map(num => num.trim());
+
+            let numerosValidos = numeros.map(num => parseInt(num));
+
+            let esValido = numerosValidos.every(num => !isNaN(num));
+
+            let resultadoDiv = document.getElementById("resultado");
+
+            if (!esValido) {
+                resultadoDiv.innerHTML = "<span class='error'>Por favor, ingresa solo números válidos separados por coma.</span>";
+                return;
+            }
+
+            let cuadrados = numerosValidos.map(num => num * num);
+
+            resultadoDiv.innerHTML = `<span class='success'>Arreglo original: [${numerosValidos}]<br>Arreglo con los cuadrados: [${cuadrados}]</span>`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serie Fibonacci</title>
+  <style>
+   
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input[type="number"] {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      max-height: 200px;
+      overflow-y: auto;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+    <form action="/pages/numeros/numeros.html">
+  <div class="container">
+    <h1>Serie de Fibonacci</h1>
+    <p>Ingresa un número para calcular los primeros n números de la serie de Fibonacci:</p>
+    <input type="number" id="userInput" placeholder="Ingresa un número" />
+    <button id="generateFibonacci" type="button">Generar Serie</button>
+    <button type="submit">Reegresar</button>
+    <div class="result" id="result">Aquí aparecerá la serie</div>
+  </div></form>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+       button = document.getElementById("generateFibonacci");
+       resultDiv = document.getElementById("result");
+
+      button.addEventListener("click", () => {
+         userInput = parseInt(document.getElementById("userInput").value);
+
+        if (isNaN(userInput) || userInput <= 0) {
+          resultDiv.textContent = "Por favor, ingresa un número válido mayor a 0.";
+          return;
+        }
+
+        let fibonacci = [];
+        let a = 0, b = 1;
+
+        for (let i = 0; i < userInput; i++) {
+          fibonacci.push(a); 
+          let temp = a + b;
+          a = b;
+          b = temp;
+        }
+
+        resultDiv.innerHTML = `Los primeros ${userInput} números de la serie de Fibonacci son:<br>${fibonacci.join(", ")}`;
+      });
+    });
+  </script>
+</body>
+</html>

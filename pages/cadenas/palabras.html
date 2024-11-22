@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espaciar Palabra</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Espaciar Palabra</h1>
+  <div class="container">
+    <form action="/pages/cadenas/cadenas.html">
+    <input type="text" id="palabra" placeholder="Ingresa una palabra">
+    <button onclick="espaciarPalabra()" type="button">Espaciar</button>
+    <button onclick="limpiar()" type="button">Limpiar</button>
+    <button type="submit">Regresar</button>
+    <div class="result" id="resultado"></div>
+  </div></form>
+  <script>
+    function espaciarPalabra() {
+      const palabra = document.getElementById("palabra").value;
+      const resultado = palabra.split("").join(" ");
+      document.getElementById("resultado").innerText = `Resultado: ${resultado}`;
+    }
+    function limpiar(){
+        palabra.value = "";
+        resultado.innerHTML = "";
+
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suma de Números Pares</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e3f2fd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input[type="number"] {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+    <form action="/pages/numeros/numeros.html">
+  <div class="container">
+    <h1>Suma de Números Pares</h1>
+    <p>Ingresa un número y presiona el botón para calcular la suma de números pares desde 1 hasta ese número.</p>
+    <input type="number" id="userInput" placeholder="Ingresa un número" />
+    <button id="calculateButton" type="button">Calcular Suma</button>
+    <button>Regresar</button>
+    <div class="result" id="result">El resultado aparecerá aquí</div>
+  </div></form>
+
+  <script>
+    button=0; resultDiv=0
+    document.addEventListener("DOMContentLoaded", () => {
+       button = document.getElementById("calculateButton");
+       resultDiv = document.getElementById("result");
+
+       userInput=0; number=0 
+      button.addEventListener("click", () => {
+         userInput = document.getElementById("userInput").value;
+         number = parseInt(userInput);
+
+      
+        if (isNaN(number) || number <= 0) {
+          resultDiv.textContent = "Por favor, ingresa un número válido mayor a 0.";
+          return;
+        }
+
+        let sum = 0;
+        for (let i = 2; i <= number; i += 2) {
+          sum += i;
+        }
+        resultDiv.textContent = `La suma de los números pares desde 1 hasta ${number} es: ${sum}`;
+      });
+    });
+  </script>
+</body>
+</html>

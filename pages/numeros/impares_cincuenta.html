@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Números impares del 1 al 50</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+    }
+
+    button {
+      background: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    ul li {
+      background: #f0f8ff;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+    <form action="/pages/numeros/numeros.html">
+  <div class="container">
+    <h1>Números impares del 1 al 50</h1>
+    <button id="generateButton" type="button">Generar números impares</button>
+    <button type="submit">Regresar</button>
+    <ul id="numberList"></ul>
+  </div></form>
+  <script>
+    let button = 0; let numberList = 0; let listItem = 0
+    document.addEventListener("DOMContentLoaded", () => {
+      button = document.getElementById("generateButton");
+      numberList = document.getElementById("numberList");
+
+      button.addEventListener("click", () => {
+        numberList.innerHTML = ""; 
+        for (let i = 1; i <= 50; i++) {
+          if (i % 2 !== 0) {
+            listItem = document.createElement("li");
+            listItem.textContent = i;
+            numberList.appendChild(listItem);
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

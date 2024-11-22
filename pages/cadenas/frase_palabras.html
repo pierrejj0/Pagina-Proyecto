@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Palabras</title>
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .grupo {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin: 10px 0 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            font-size: 14px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="grupo">
+        <form action="/pages/cadenas/cadenas.html">
+
+        <h1>Contador de palabras</h1>
+
+        <p>Ingresa una frase y te diremos cuántas palabras contiene:</p>
+
+        <textarea id="textarea1" placeholder="Escribe tu frase aquí.."></textarea>
+
+        <button onclick="contarPalabras()" type="button">Contar Palabras</button>
+        <button type="submit">Regresar</button>
+        <div id="resultado" class="resultado"></div></form>
+
+    </div>
+
+    <script>
+        function contarPalabras() {
+
+            let texto = ""; let palabras = ""; let  totalPalabras = ""
+
+            texto = document.getElementById("textarea1").value;
+
+            if (texto === "") {
+
+                document.getElementById("resultado").innerHTML = "Por favor, ingresa una frase.";
+                return;
+
+            }
+
+            palabras = texto.split(/\s+/).filter(palabra => palabra.length > 0);
+
+            totalPalabras = palabras.length;
+
+            document.getElementById("resultado").innerHTML = `La frase contiene ${totalPalabras} palabra${totalPalabras > 1 ? 's' : ''}.`;
+
+        }
+    </script>
+
+</body>
+</html>

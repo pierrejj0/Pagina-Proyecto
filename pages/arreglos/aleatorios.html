@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Aleatorios</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .grupo {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+<form action="/pages/arreglos/arreglos.html">
+    <div class="grupo">
+        <h1>Números aleatorios</h1>
+        <p>Haz clic en el botón para generar un arreglo de 10 números aleatorios:</p>
+        <button onclick="generarNumeros()" type="button">Generar Números</button>
+        <button type="submit">Regresar</button>
+        <ul id="listanumeros"></ul>
+
+    </div></form>
+    <script>
+
+        function generarNumeros() {
+
+            let lista = ""; numeros = 0; let li = ""
+
+            lista = document.getElementById("listanumeros");
+
+            lista.innerHTML = ""; 
+
+        
+            numeros = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100) + 1);
+
+          
+            
+            numeros.forEach(numero => {
+
+                li = document.createElement("li");
+
+                li.textContent = numero;
+
+                lista.appendChild(li);
+
+            });
+
+        }
+    </script>
+</body>
+</html>

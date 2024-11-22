@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicación de 1 a 10</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0,30
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #3498db;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        p {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        .result {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 22px;
+            color: #e74c3c;
+        }
+
+        .loading {
+            font-size: 18px;
+            color: #f39c12;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="/pages/numeros/numeros.html">
+    <div class="container">
+        <h1>Multiplicación de los Números del 1 al 10</h1>
+        <button onclick="calcularMultiplicacion()" type="button">Calcular</button>
+        <button type="submit">Regresar</button>
+        <p id="resultado"></p>
+        <p id="loading" class="loading" style="display: none;">Calculando...</p>
+    </div>
+</form>
+    <script>
+        function calcularMultiplicacion() {
+            document.getElementById("resultado").textContent = ""; 
+           
+            setTimeout(function() {
+                let resultado = 1;
+                for (let i = 1; i <= 10; i++) {
+                    resultado *= i; 
+                }
+                document.getElementById("resultado").textContent = "La multiplicación de los números del 1 al 10 es: ";
+                
+                const resultDiv = document.createElement("div");
+                resultDiv.classList.add("result");
+                resultDiv.textContent = resultado;
+                document.getElementById("resultado").appendChild(resultDiv);
+
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

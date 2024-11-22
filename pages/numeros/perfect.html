@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Número Perfecto</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+            max-width: 90%;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+        }
+
+        .success {
+            color: green;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/pages/numeros/numeros.html">
+    <div class="container">
+        <h1>¿Es un Número Perfecto?</h1>
+        <input type="number" id="numInput" placeholder="Introduce un número" />
+        <button onclick="verificarNumeroPerfecto()" type="button">Verificar</button>
+        <button type="submit">Regresar</button>
+        <div class="result" id="resultado"></div>
+    </div></form>
+
+    <script>
+        function verificarNumeroPerfecto() {
+            let num = document.getElementById("numInput").value;
+            num = parseInt(num);
+            let resultadoDiv = document.getElementById("resultado");
+
+            if (isNaN(num) || num <= 1) {
+                resultadoDiv.innerHTML = "<span class='error'>Por favor, ingresa un número válido mayor que 1.</span>";
+                return;
+            }
+
+            let sumaDivisores = 0;
+
+            for (let i = 1; i < num; i++) {
+                if (num % i === 0) {  
+                    sumaDivisores += i;  
+                }
+            }
+
+            if (sumaDivisores === num) {
+                resultadoDiv.innerHTML = `<span class='success'>${num} es un número perfecto.</span>`;
+            } else {
+                resultadoDiv.innerHTML = `<span class='error'>${num} no es un número perfecto.</span>`;
+            }
+        }
+    </script>
+</body>
+</html>

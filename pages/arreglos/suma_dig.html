@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suma de Dígitos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f8e9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #388e3c;
+    }
+
+    input, button {
+      width: 90%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 2px solid #388e3c;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2e7d32;
+    }
+
+    p {
+      font-size: 18px;
+      color: #388e3c;
+      font-weight: bold;
+    }
+
+    .clear-btn {
+      background-color: #f44336;
+    }
+
+    .clear-btn:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form action="/pages/arreglos/arreglos.html">
+    <h1>Suma de Dígitos</h1>
+    <input type="number" id="entrada-numero" placeholder="Escribe un número">
+    <button id="sumar-btn" type="button">Sumar Dígitos</button>
+    <p id="resultado"></p>
+    <button class="clear-btn" onclick="limpiar()" type="button">Limpiar</button>
+    <button  type="submit">Regresar</button>
+</form>
+  </div>
+
+  <script>
+    const botonSumar = document.getElementById("sumar-btn");
+    const entradaNumero = document.getElementById("entrada-numero");
+    const resultadoDiv = document.getElementById("resultado");
+
+    botonSumar.addEventListener("click", () => {
+      const numero = entradaNumero.value;
+      let suma = 0;
+
+      if (numero) {
+        for (let i = 0; i < numero.length; i++) {
+          suma += parseInt(numero[i]);
+        }
+        resultadoDiv.textContent = `La suma de los dígitos es: ${suma}`;
+      } else {
+        resultadoDiv.textContent = "Por favor, ingresa un número.";
+      }
+    });
+
+    function limpiar() {
+      entradaNumero.value = "";
+      resultadoDiv.textContent = "";
+    }
+  </script>
+</body>
+</html>

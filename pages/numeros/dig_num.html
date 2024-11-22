@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contar Dígitos de un Número</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    input[type="number"] {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+    <form action="/pages/numeros/numeros.html">
+  <div class="container">
+    <h1>Contar Dígitos de un Número</h1>
+    <p>Ingresa un número entero positivo para contar cuántos dígitos tiene:</p>
+    <input type="number" id="userNumber" placeholder="Ingresa un número entero positivo" />
+    <button id="countDigits" type="button">Contar Dígitos</button>
+    <button type="submit">Regresar</button>
+    <div class="result" id="result">Aquí aparecerá la cantidad de dígitos</div>
+  </div></form>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const button = document.getElementById("countDigits");
+      const resultDiv = document.getElementById("result");
+
+      button.addEventListener("click", () => {
+        const userNumber = document.getElementById("userNumber").value;
+
+        if (!userNumber || userNumber <= 0 || !Number.isInteger(Number(userNumber))) {
+          resultDiv.textContent = "Por favor, ingresa un número entero positivo.";
+          return;
+        }
+
+        const digitsCount = userNumber.length;
+
+        resultDiv.textContent = `El número tiene ${digitsCount} dígitos.`;
+      });
+    });
+  </script>
+</body>
+</html>

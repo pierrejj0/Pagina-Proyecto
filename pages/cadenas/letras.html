@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contar Letras del Alfabeto</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e3f2fd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1976d2;
+    }
+
+    input, button {
+      width: 90%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 2px solid #1976d2;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1565c0;
+    }
+
+    p {
+      font-size: 18px;
+      color: #1976d2;
+      font-weight: bold;
+    }
+
+    .clear-btn {
+      background-color: #f44336;
+    }
+
+    .clear-btn:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form action="/pages/cadenas/cadenas.html">
+    <h1>Contar Letras del Alfabeto</h1>
+    <input type="text" id="entrada-palabra" placeholder="Escribe una palabra">
+    <button id="contar-btn" type="button">Contar Letras</button>
+    <p id="resultado"></p>
+    <button class="clear-btn" onclick="limpiar()" type="button">Limpiar</button>
+    <button type="submit">Regresar</button></form>
+</div>
+
+  <script>
+    const botonContar = document.getElementById("contar-btn");
+    const entradaPalabra = document.getElementById("entrada-palabra");
+    const resultadoDiv = document.getElementById("resultado");
+
+    botonContar.addEventListener("click", () => {
+      const palabra = entradaPalabra.value;
+      let letras = 0;
+
+      if (palabra) {
+        for (let i = 0; i < palabra.length; i++) {
+          if (/[a-zA-Z]/.test(palabra[i])) {
+            letras++;
+          }
+        }
+        resultadoDiv.textContent = `Número de letras: ${letras}`;
+      } else {
+        resultadoDiv.textContent = "Por favor, ingresa una palabra.";
+      }
+    });
+
+    function limpiar() {
+      entradaPalabra.value = "";
+      resultadoDiv.textContent = "";
+    }
+  </script>
+</body>
+</html>

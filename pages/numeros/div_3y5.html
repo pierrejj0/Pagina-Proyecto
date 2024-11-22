@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Números Divisibles por 3 y 5</title>
+  <style>
+   
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+ 
+    .container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+    }
+
+  
+    h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+   
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+   
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      max-height: 150px;
+      overflow-y: auto;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <form action="/pages/numeros/numeros.html"><div class="container">
+    <h1>Números Divisibles por 3 y 5</h1>
+    <p>Haz clic en el botón para ver todos los números entre 1 y 100 que son divisibles por 3 y 5.</p>
+    <button id="showNumbers" type="button">Mostrar Números</button>
+    <button type="submit">Regresar</button>
+    <div class="result" id="result">Aquí aparecerán los números</div>
+  </div></form>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+       button = document.getElementById("showNumbers");
+       resultDiv = document.getElementById("result");
+
+      
+      button.addEventListener("click", () => {
+        let result = ""; 
+        for (let i = 1; i <= 100; i++) {
+          if (i % 3 === 0 && i % 5 === 0) {
+            result += `${i} <br>`; 
+          }
+        }
+
+        
+        resultDiv.innerHTML = result || "No hay números divisibles por 3 y 5.";
+      });
+    });
+  </script>
+</body>
+</html>

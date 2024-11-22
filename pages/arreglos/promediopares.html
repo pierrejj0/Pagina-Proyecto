@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio de Números Pares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+        }
+
+        .error {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <form action="/pages/arreglos/arreglos.html">
+    <div class="container">
+        <h1>Promedio de números pares</h1>
+        <p>Ingresa 10 números separados por comas:</p>
+        <input type="text" id="input-numeros" placeholder="Ejemplo: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10">
+        <button onclick="calcularPromedioPares()" type="button">Calcular Promedio de Pares</button>
+        <button type="submit">Regresar</button>
+        <div id="resultado" class="result"></div>
+    </div></form>
+    <script>
+        function calcularPromedioPares() {
+
+            let inputNumeros = 0; let resultado = 0; let numeros = 0; let numerosPares = 0; suma = 0; promedio = 0;
+            inputNumeros = document.getElementById("input-numeros").value;
+            resultado = document.getElementById("resultado");
+
+            resultado.textContent = "";
+
+
+            if (!inputNumeros.trim()) {
+                resultado.textContent = "Por favor, ingresa una lista de 10 números.";
+                resultado.classList.add("error");
+                return;
+            }
+
+            numeros = inputNumeros.split(",").map(num => parseInt(num.trim()));
+
+            if (numeros.length !== 10 || numeros.some(isNaN)) {
+                resultado.textContent = "Por favor, ingresa exactamente 10 números válidos.";
+                resultado.classList.add("error");
+                return;
+            }
+
+            numerosPares = numeros.filter(num => num % 2 === 0);
+
+    
+            if (numerosPares.length === 0) {
+                resultado.textContent = "No hay números pares en la lista.";
+                resultado.classList.add("error");
+                return;
+            }
+
+            suma = numerosPares.reduce((acumulado, num) => acumulado + num, 0);
+            promedio = suma / numerosPares.length;
+
+           
+            resultado.textContent = `El promedio de los números pares es: ${promedio.toFixed(2)}`;
+            resultado.classList.remove("error");
+        }
+    </script>
+</body>
+</html>

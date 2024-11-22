@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invertir Número</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eef2f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input[type="number"] {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+    <form action="/pages/numeros/numeros.html">
+  <div class="container">
+    <h1>Invertir Número</h1>
+    <p>Ingresa un número para invertir sus dígitos:</p>
+    <input type="number" id="userNumber" placeholder="Ingresa un número" />
+    <button id="invertNumber" type="button">Invertir</button>
+    <button type="submit">Regresar</button>
+    <div class="result" id="result">Aquí aparecerá el número invertido</div>
+  </div></form>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+       button = document.getElementById("invertNumber");
+       resultDiv = document.getElementById("result");
+
+      button.addEventListener("click", () => {
+         userNumber = document.getElementById("userNumber").value;
+
+        if (!userNumber) {
+          resultDiv.textContent = "Por favor, ingresa un número válido.";
+          return;
+        }
+
+         invertedNumber = userNumber.split('').reverse().join('');
+        
+        resultDiv.textContent = `Número invertido: ${invertedNumber}`;
+      });
+    });
+  </script>
+</body>
+</html>

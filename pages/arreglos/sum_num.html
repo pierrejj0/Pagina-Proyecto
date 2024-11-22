@@ -1,0 +1,117 @@
+<!--Promedio de calificaciones: Calcular el promedio de cinco calificaciones ingresadas por el usuario.-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio de Calificaciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .grupo {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #007bff;
+        }
+
+        .error {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="grupo">
+        <form action="/pages/arreglos/arreglos.html">
+        <h1>Promedio de calificaciones</h1>
+        <p>Ingresa cinco calificaciones:</p>
+        <input type="number" id="calificacion1" placeholder="Calificación 1" min="0" max="10">
+        <input type="number" id="calificacion2" placeholder="Calificación 2" min="0" max="10">
+        <input type="number" id="calificacion3" placeholder="Calificación 3" min="0" max="10">
+        <input type="number" id="calificacion4" placeholder="Calificación 4" min="0" max="10">
+        <input type="number" id="calificacion5" placeholder="Calificación 5" min="0" max="10">
+        <button onclick="calcularPromedio()" type="button">Calcular Promedio</button>
+        <button type="submit">Regresar</button>
+        <div id="resultado" class="result"></div></form>
+    </div>
+    <script>
+        function calcularPromedio() {
+
+            let calificacion1 = 0; let calificacion2 = 0; let calificacion3 = 0; let calificacion4 = 0; let calificacion5 = 0; let resultado = 0; let promedio = 0;
+
+            calificacion1 = parseFloat(document.getElementById("calificacion1").value);
+            calificacion2 = parseFloat(document.getElementById("calificacion2").value);
+            calificacion3 = parseFloat(document.getElementById("calificacion3").value);
+            calificacion4 = parseFloat(document.getElementById("calificacion4").value);
+            calificacion5 = parseFloat(document.getElementById("calificacion5").value);
+            resultado = document.getElementById("resultado");
+
+   
+            resultado.textContent = "";
+
+       
+            if ([calificacion1, calificacion2, calificacion3, calificacion4, calificacion5].some(isNaN) || 
+                [calificacion1, calificacion2, calificacion3, calificacion4, calificacion5].some(cal => cal < 0 || cal > 10)) {
+                resultado.textContent = "Por favor, ingresa calificaciones válidas entre 0 y 10.";
+                resultado.classList.add("error");
+                return;
+            }
+
+     
+            promedio = (calificacion1 + calificacion2 + calificacion3 + calificacion4 + calificacion5) / 5;
+
+          
+            resultado.textContent = `El promedio es: ${promedio.toFixed(2)}`;
+            resultado.classList.remove("error");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máximo de una Lista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+        }
+
+        .error {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <form action="/pages/arreglos/arreglos.html">
+    <div class="container">
+        <h1>Encontrar el máximo</h1>
+        <p>Ingresa una lista de números separados por comas:</p>
+        <input type="text" id="inputnumeros" placeholder="Ejemplo: 3, 5, 7, 2, 8">
+        <button onclick="encontrarMaximo()" type="button">Calcular Máximo</button>
+        <button type="submit">Regresar</button>
+        <div id="resultado" class="resultado"></div>
+    </div></form>
+    <script>
+        function encontrarMaximo() {
+
+            let input = "";  let resultado = ""; let numeros = 0; let maximo = 0
+            
+            input = document.getElementById("inputnumeros").value;
+            resultado = document.getElementById("resultado");
+
+           
+            resultado.textContent = "";
+
+            
+            if (!input.trim()) {
+                resultado.textContent = "Por favor, ingresa una lista de números.";
+                resultado.classList.add("error");
+                return;
+            }
+
+            
+            numeros = input.split(",").map(num => parseFloat(num.trim()));
+
+            
+            if (numeros.some(isNaN)) {
+                resultado.textContent = "Por favor, asegúrate de ingresar solo números válidos.";
+                resultado.classList.add("error");
+                return;
+            }
+
+          
+            maximo = Math.max(...numeros);
+
+            
+            resultado.textContent = `El número más grande es: ${maximo}`;
+            resultado.classList.remove("error");
+        }
+    </script>
+</body>
+</html>

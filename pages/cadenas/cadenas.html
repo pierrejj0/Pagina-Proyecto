@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadenas</title>
+    <style>
+         body {
+        font-family: Arial, sans-serif;
+        background-color: #abeade;
+        margin: 0;
+        padding: 20px;
+      }
+      header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -5px;
+}
+.logotipo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+.opciones{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+}
+
+.opciones li a, .ejercicios li{
+    margin: 15px;
+    list-style: none;
+    text-decoration: none;
+    color:darkgreen;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+.opciones li a:hover{
+background-color: rgba(255, 255, 255, 0.422);
+  color: darkgreen;
+  font-size: 18px;
+border-radius: 5px;
+padding: 2px;
+} 
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Estilos de las tarjetas */
+      .card {
+        flex: 1 1 calc(20% - 20px); /* Ajuste para 5 tarjetas por fila */
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s;
+        min-height: 180px;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card h3 {
+        color: #333;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+
+      .card p {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 15px;
+        line-height: 1.4;
+      }
+
+      .card a {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #007bff;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .card a:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+        <div class="logotipo">
+            <a href="/index.html">
+            <center><img src="/images/logotipo_1.png"
+            alt=""
+            width="100px"></center></a>
+        </div>
+        <nav>
+            <ul class="opciones">
+            <li><a href="/pages/ejercicios.html">Simulador</a></li>
+            <li><a href="/pages/numeros/numeros.html">Ejercicios Númericos</a></li>
+            <li><a href="/pages/arreglos/arreglos.html"> Tratamientos de Arreglos</a></li>
+            <li><a href="/pages/cadenas/cadenas.html"> Tratamientos de Cadenas</a></li>
+            <li><a href="/pages/contacto.html">Contacto</a></li>
+            <li><a href="/pages/acercade.html">Acerca de</a></li>
+            
+            
+        </ul>
+        </nav>
+    </header>
+    <h1>Tratamientos de Cadenas</h1>
+    <div class="grid">
+        <div class="card">
+            <h3>Ejercicio 1</h3>
+            <p> Dada dos frases indicar si son iguales o la primera en mayor o menor que la segunda.</p>
+            <a href="frasesi.html">Ver Ejercicio</a>
+          </div>
+          <div class="card">
+            <h3>Ejercicio 2</h3>
+            <p> Dado un nombre y apellido ingresado presentarlo concatenado: apellido y nombre</p>
+            <a href="concatenar.html">Ver Ejercicio</a>
+          </div>
+          <div class="card">
+            <h3>Ejercicio 3</h3>
+            <p>Ingresar una palabra y crear otra palabra con cada carácter de la primera palabra dejando un espacio entre cada caracter.</p>
+            <a href="palabras.html">Ver Ejercicio</a>
+          </div>
+      <div class="card">
+        <h3>Ejercicio 4</h3>
+        <p>Dada una frase: presentar cada carácter con su respectivo código asccii</p>
+        <a href="Ascci.html">Ver Ejercicio</a >
+      </div>
+      <div class="card">
+        <h3>Ejercicio 5</h3>
+        <p>Invertir una palabra: Invertir una frase ingresada por el usuario</p>
+        <a href="invertir.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 6</h3>
+        <p>Contar vocales en una palabra: Contar cuántas vocales tiene una palabra ingresada por el usuario.</p>
+        <a href="vocales.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 7</h3>
+        <p>Contar las letras del alfabeto en una palabra: Contar cuántas letras del alfabeto tiene una palabra ingresada por el usuario.
+        </p>
+        <a href="letras.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 8</h3>
+        <p> Contar cuántos dígitos tiene una frase ingresada por el usuario
+        </p>
+        <a href="digitos.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 9</h3>
+        <p>Contar cuántos signos de puntuación tiene una palabra ingresada por el usuario.</p>
+        <a href="puntuacion.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 10</h3>
+        <p>Cuenta el número de consonantes en una frase dada.</p>
+        <a href="frase_palabras.html">Ver Ejercicio</a>
+      </div>
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio mayor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+        }
+
+        .error {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <form action="/pages/arreglos/arreglos.html">
+    <div class="container">
+        <h1>Promedio de números mayores a un valor</h1>
+        <p>Ingresa una lista de números (separados por comas) y un valor límite:</p>
+        <input type="text" id="input-numeros" placeholder="Ejemplo: 10, 20, 30, 40">
+        <input type="number" id="limite" placeholder="Valor Límite" min="0">
+        <button onclick="calcularPromedio()" type="button">Calcular Promedio</button>
+        <button type="submit">Regresar</button>
+        <div id="resultado" class="result"></div></form>
+    </div>
+    <script>
+        function calcularPromedio() {
+
+            let numeros = 0; let inputNumeros = 0; let limite = 0; let resultado = 0; let mayoresAlLimite = 0; let suma = 0; let promedio = 0;
+
+            inputNumeros = document.getElementById("input-numeros").value;
+            limite = parseFloat(document.getElementById("limite").value);
+            resultado = document.getElementById("resultado");
+
+            
+            resultado.textContent = "";
+
+      
+            if (!inputNumeros.trim() || isNaN(limite)) {
+                resultado.textContent = "Por favor, ingresa una lista de números y un valor límite válido.";
+                resultado.classList.add("error");
+                return;
+            }
+
+           
+            numeros = inputNumeros.split(",").map(num => parseFloat(num.trim()));
+
+            
+            mayoresAlLimite = numeros.filter(num => num > limite);
+
+         
+            if (mayoresAlLimite.length === 0) {
+                resultado.textContent = `No hay números mayores a ${limite}.`;
+                resultado.classList.add("error");
+                return;
+            }
+
+            suma = mayoresAlLimite.reduce((acumulado, num) => acumulado + num, 0);
+            promedio = suma / mayoresAlLimite.length;
+
+            resultado.textContent = `El promedio de los números mayores a ${limite} es: ${promedio.toFixed(2)}`;
+            resultado.classList.remove("error");
+        }
+    </script>
+</body>
+</html>

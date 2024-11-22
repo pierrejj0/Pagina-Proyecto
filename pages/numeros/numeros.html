@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arreglos</title>
+    <style>
+         body {
+        font-family: Arial, sans-serif;
+        background-color: #abeade;
+        margin: 0;
+        padding: 20px;
+      }
+      header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -5px;
+}
+.logotipo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+.opciones{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+}
+
+.opciones li a, .ejercicios li{
+    margin: 15px;
+    list-style: none;
+    text-decoration: none;
+    color:darkgreen;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+.opciones li a:hover{
+background-color: rgba(255, 255, 255, 0.422);
+  color: darkgreen;
+  font-size: 18px;
+border-radius: 5px;
+padding: 2px;
+} 
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Estilos de las tarjetas */
+      .card {
+        flex: 1 1 calc(20% - 20px); /* Ajuste para 5 tarjetas por fila */
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s;
+        min-height: 180px;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card h3 {
+        color: #333;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+
+      .card p {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 15px;
+        line-height: 1.4;
+      }
+
+      .card a {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #007bff;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .card a:hover {
+        background-color: #0056b3;
+      }
+      footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #000000;
+    background-color: #6edfa4;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+}
+    </style>
+  </head>
+
+  <body>
+    <header>
+        <div class="logotipo">
+            <a href="/index.html">
+            <center><img src="/images/logotipo_1.png"
+            alt=""
+            width="100px"></center></a>
+        </div>
+        <nav>
+            <ul class="opciones">
+            <li><a href="/pages/ejercicios.html">Simulador</a></li>
+            <li><a href="/pages/numeros/numeros.html">Ejercicios Númericos</a></li>
+            <li><a href="/pages/arreglos/arreglos.html"> Tratamientos de Arreglos</a></li>
+            <li><a href="/pages/cadenas/cadenas.html"> Tratamientos de Cadenas</a></li>
+            <li><a href="/pages/contacto.html">Contacto</a></li>
+            <li><a href="/pages/acercade.html">Acerca de</a></li>
+            
+            
+        </ul>
+        </nav>
+    </header>
+    <h1>Ejercicios Numericos</h1>
+    <div class="grid">
+
+      <div class="card">
+        <h3>Ejercicio 1</h3>
+        <p>Imprimir todos los números impares entre 1 y 50</p>
+        <a href="impares_cincuenta.html">Ver Ejercicio</a >
+      </div>
+      <div class="card">
+        <h3>Ejercicio 2</h3>
+        <p>Sumar todos los números del 1 al 100.</p>
+        <a href="suma1a100.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 3</h3>
+        <p> Sumar todos los números pares desde 1 hasta un número dado por el usuario.</p>
+        <a href="sum_par.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 4</h3>
+        <p>Imprimir todos los números del 1 al 100 que sean divisibles por 3 y 5.        </p>
+        <a href="div_3y5.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 5</h3>
+        <p>
+            Generar la tabla de multiplicar/sumar de un número ingresado por el usuario.
+        </p>
+        <a href="tablasuma.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 6</h3>
+        <p>
+            Imprimir los primeros n números de la serie de Fibonacci.
+        </p>
+        <a href="fibonacci.html">Ver Ejercicio</a>
+      </div>
+
+      <!-- Fila 2 -->
+      <div class="card">
+        <h3>Ejercicio 7</h3>
+        <p>Multiplicar todos los números del 1 al 10</p>
+        <a href="mul1al10.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 8</h3>
+        <p>Calcular el factorial de un número dado por el usuario.</p>
+        <a href="factorial.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 9</h3>
+        <p>Imprimir todos los divisores de un número dado entre 1 y 20.</p>
+        <a href="div1y20.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 10</h3>
+        <p>Mostrar los divisores de un número excluyendo el propio número.</p>
+        <a href="divisores.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 11</h3>
+        <p>Verificar si un número es perfecto ( Un número es perfecto cuando: la suma de sus divisores excluyendo el número da como resultado el propio número).</p>
+        <a href="perfect.html">Ver Ejercicio</a>
+      </div>
+      <div class="card">
+        <h3>Ejercicio 12</h3>
+        <p>Verificar si un número dado es primo.</p>
+        <a href="primo.html">Ver Ejercicio</a>
+    </div>
+    <div class="card">
+        <h3>Ejercicio 13</h3>
+        <p>Invertir los dígitos de un número ingresado por el usuario.</p>
+        <a href="invertirnum.html">Ver Ejercicio</a>
+    </div>
+    <div class="card">
+        <h3>Ejercicio 14</h3>
+        <p>Contar cuántos dígitos tiene un número entero positivo.</p>
+        <a href="dig_num.html">Ver Ejercicio</a>
+    </div>
+    <div class="card">
+        <h3>Ejercicio 15</h3>
+        <p>Imprimir un triángulo de asteriscos de altura n </p>
+        <a href="triangulo.html">Ver Ejercicio</a>
+    </div>
+    <footer><h5>Jean Jiménez-Jose Torres-Rey Mayorga-Adrian Limaico-Melany Parra-Michelle Jara-Derechos Reservados @copyright</h5></footer>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta de Programación</title>
+    <!-- Agregar Bootstrap para un estilo básico -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        h2 {
+            color: #ff6347;
+            text-shadow: 2px 2px #ffa07a;
+            animation: bounce 2s infinite;
+        }
+        pre {
+            background-color: #ffebcd;
+            border: 2px solid #ffa07a;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            color: #2f4f4f;
+        }
+        .form-check {
+            text-align: left;
+        }
+        .form-check-label {
+            font-weight: bold;
+            color: #4682b4;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .form-check-label:hover {
+            transform: scale(1.05);
+        }
+        button {
+            background-color: #32cd32;
+            border: none;
+            font-size: 1.2rem;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #228b22;
+        }
+        .respuesta-correcta {
+            color: #32cd32;
+        }
+        .respuesta-incorrecta {
+            color: #dc143c;
+        }
+        .form-check-input:checked {
+            background-color: #ff4500 !important; /* Naranja brillante */
+            border-color: #ff4500 !important;
+        }
+        .form-check-input {
+            border: 2px solid #ff8c00;
+        }
+        .form-check-input:hover {
+            border-color: #ff6347;
+        }
+        .resultado {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-2">
+        <!-- Título de la pregunta -->
+        <h2 class="text-center">🤓 Proposito de una Función. 🤓</h2>
+
+        <!-- Mostrar el algoritmo con el error -->
+       <pre class="bg-primary-subtle p-1 border rounded text-primary-emphasis">
+        ¿Cuál es el propósito de una función en programación?
+
+</pre>
+
+        <h4 class="text-center text-primary-emphasis">
+            </h4>
+        
+        <!-- Formulario con las opciones de respuesta -->
+        <form id="formularioPregunta" action="/pages/ejercicios.html" class=" d-flex align-items-center justify-content-center">
+            <div>
+                <div class="form-check mb-1 d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" name="respuesta" id="opcion1" value="1">
+                    <label class="form-check-label" for="opcion1">a) Organizar los datos de entrada en programación. </label>
+                </div>
+                <div class="form-check mb-1 d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" name="respuesta" id="opcion2" value="5">
+                    <label class="form-check-label" for="opcion2">b)  Encapsular un conjunto de instrucciones que realiza una tarea específica y pueden ser reutilizadas. </label>
+                </div>
+                <div class="form-check mb-1 d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" name="respuesta" id="opcion3" value="3">
+                    <label class="form-check-label" for="opcion3">c) Definir una variable que almacena un valor único.</label>
+                </div>
+                <div class="form-check mb-1 d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" name="respuesta" id="opcion4" value="6">
+                    <label class="form-check-label" for="opcion4">d) Implementar una estructura de control como un bucle o una condición. </label>
+                </div>
+                <!-- Botón para verificar la respuesta -->
+                <button type="button" class="btn btn-primary mt-3" onclick="verificarRespuesta()">Aceptar</button>
+                <button class="btn btn-danger text-white mt-3" type="submit">Regresar</button>
+            </div>
+            <!-- Sección para mostrar el resultado al mismo nivel de las opciones -->
+            <div id="resultado" class="resultado ms-5 h4"></div>
+        </form>
+    </div>
+    <script>
+        function calcularTotal() {
+  // Obtener los valores ingresados por el usuario
+  const precio = parseFloat(document.getElementById("precio").value);
+  const cantidad = parseInt(document.getElementById("cantidad").value);
+  const aplicarIva = document.getElementById("iva").checked;
+  const resultado = document.getElementById("resultado");
+  // Calcular subtotal
+  let subtotal = precio * cantidad;
+  // Aplicar descuento si la cantidad es mayor a 10
+  let descuento = 0 
+  if (cantidad > 10){
+    descuento=subtotal * 0.10
+  }
+  // Calcular IVA si el checkbox está seleccionado
+  let  iva = 0
+  if (aplicarIva==true){
+    iva = (subtotal - descuento) * 0.15 
+  } 
+  // Calcular total
+  const total = subtotal - descuento + iva;
+  // Mostrar resultados en el área de texto
+  resultado.innerHTML = `
+                Subtotal: ${subtotal.toFixed(2)} USD
+                Descuento: ${descuento.toFixed(2)} USD
+                IVA: ${iva.toFixed(2)} USD
+                Total a pagar: ${total.toFixed(2)} USD
+            `;
+}
+
+function verificarRespuesta() {
+  // Obtener la opción seleccionada por el usuario
+  const respuestaSeleccionada = document.querySelector('input[name="respuesta"]:checked');
+  const resultadoDiv = document.getElementById('resultado');
+
+  // Verificar si se seleccionó una respuesta
+  if (!respuestaSeleccionada) {
+    resultadoDiv.innerHTML = '<p class="respuesta-incorrecta">🙄 ¡Selecciona una opción antes de continuar! 🙄</p>';
+    return;
+  }
+
+  // La línea correcta que tiene un error es la línea 3
+  const respuestaCorrecta = '5';
+
+  // Comprobar si la respuesta seleccionada es correcta
+  if (respuestaSeleccionada.value === respuestaCorrecta) {
+    resultadoDiv.innerHTML = '<p class="respuesta-correcta">🎉 ¡Correcto! Esa es la respuesta correcta 🎉</p>';
+  } else {
+    resultadoDiv.innerHTML = '<p class="respuesta-incorrecta">❌ Incorrecto. ¡Vuelve a intentarlo! ❌</p>';
+  }
+}
+    </script>
+</body>
+</html>
